@@ -1,0 +1,12 @@
+{
+  "name": "nuffic/easyii-admin-profile",
+  "type": "yii2-extension",
+  "requires" :{
+    "noumo/easyii": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "nuffic\\profile\\": "src/"
+    }
+  }
+}
