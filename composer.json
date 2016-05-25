@@ -2,7 +2,8 @@
   "name": "nuffic/easyii-admin-profile",
   "type": "yii2-extension",
   "requires" :{
-    "noumo/easyii": "*"
+    "noumo/easyii": "*",
+    "mongosoft/yii2-upload-behavior": "*"
   },
   "autoload": {
     "psr-4": {
