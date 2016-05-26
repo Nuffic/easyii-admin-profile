@@ -21,9 +21,21 @@ class AController extends Controller
         return $this->render('index', ['admins' => $admins]);
     }
 
+    public function actionCreate()
+    {
+        $admin = new Admin();
+
+        if ($admin->load(Yii::$app->request->post()) && $admin->save()) {
+            $this->flash('success', Yii::t('app', 'Profile updated'));
+            $this->redirect(['update', 'id' => $admin->primaryKey]);
+        }
+        return $this->render('create', ['admin' => $admin]);
+    }
+
     public function actionUpdate($id)
     {
         $admin = $this->findModel($id);
+        $admin->password = '';
         if ($admin->load(Yii::$app->request->post()) && $admin->save()) {
             $this->flash('success', Yii::t('app', 'Profile updated'));
             $this->redirect(['update', 'id' => $id]);

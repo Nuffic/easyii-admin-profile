@@ -11,6 +11,10 @@ $form = ActiveForm::begin([
 ]);
 ?>
 
+<?= $form->field($admin, 'username') ?>
+
+<?= $form->field($admin, 'password', ['hintOptions' => ['class' => $admin->isNewRecord ? 'hidden' : '']]) ?>
+
 <?= $form->field($admin, 'first_name') ?>
 
 <?= $form->field($admin, 'last_name') ?>

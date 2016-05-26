@@ -7,7 +7,7 @@ $this->title = 'Profiles';
 ?>
 
     <p>
-        <?= Html::a('Add admin', ['/admin/admins/create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Add admin', ['/admin/'.$this->context->moduleName.'/a/create'], ['class' => 'btn btn-success']) ?>
     </p>
 
 <?= GridView::widget([

@@ -10,9 +10,9 @@ use yii\helpers\ArrayHelper;
  *
  * @package nuffic\profile\models
  *
- * @property string username
- * @property string password
- * @property string access_token
+ * @property string $username
+ * @property string $password
+ * @property string $access_token
  *
  * @property string $first_name
  * @property string $last_name
@@ -27,6 +27,12 @@ class Admin extends \yii\easyii\models\Admin
             [['first_name', 'last_name'], 'string'],
             [['email'], 'email'],
             [['picture'], 'image'],
+            [[
+                'first_name',
+                'last_name',
+                'email',
+                'picture',
+             ], 'required'],
         ]);
     }
 
@@ -45,5 +51,17 @@ class Admin extends \yii\easyii\models\Admin
                 ],
             ],
         ];
+    }
+
+    public function attributeHints()
+    {
+        return [
+            'password' => 'Fill only if you want to change'
+        ];
+    }
+
+    public function isRoot()
+    {
+        return !Yii::$app->user->isGuest;
     }
 }
