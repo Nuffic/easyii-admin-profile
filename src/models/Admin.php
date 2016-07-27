@@ -48,6 +48,7 @@ class Admin extends \yii\easyii\models\Admin
                 'placeholder' => '@vendor/nuffic/easyii-admin-profile/src/assets/img/user.png',
                 'thumbs' => [
                     'icon' => ['width' => 50, 'height' => 50, 'quality' => 85],
+                    'medium' => ['width' => 100, 'height' => 100, 'quality' => 85],
                     'admin_form' => ['width' => 200, 'height' => 200, 'quality' => 85],
                 ],
             ],
